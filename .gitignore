@@ -1,0 +1,31 @@
+/vendor/
+/node_modules/
+/storage/*.key
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+/.idea/
+/.vscode/
+
+# User-specific files
+/.bash_history
+
+# Laravel 5 specific
+/public/storage
+/public/hot
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/data/*
+/bootstrap/cache/*.php
+
+# Excluir archivos de configuración que pueden contener información sensible
+/config/*.php
+
+# Archivos de log
+*.log
