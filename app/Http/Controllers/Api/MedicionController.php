@@ -42,6 +42,7 @@ class MedicionController extends Controller
             $medicion->total = $validatedData['volumen'];
             $medicion->referencia = "Constante: {$validatedData['umbralConstante']}, Fuga: {$validatedData['umbralFuga']}";
             $medicion->estado = 1; // Cambia según la lógica de tu aplicación
+            $medicion->idAdministrador = auth()->user()->id; // Asumiendo que el administrador es el usuario autenticado
             $medicion->save();
 
             // Retornar una respuesta exitosa

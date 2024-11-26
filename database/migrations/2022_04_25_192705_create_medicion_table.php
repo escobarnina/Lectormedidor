@@ -24,7 +24,7 @@ return new class extends Migration
             $table->double('total', 8, 2)->nullable();
             $table->unsignedInteger('idMensualidad');
             $table->foreign('idMensualidad')->references('id')->on('mensualidad');
-            $table->unsignedInteger('idAdministrador');
+            $table->unsignedBigInteger('idAdministrador')->nullable();  // O no nullable si debe ser obligatorio
             $table->foreign('idAdministrador')->references('id')->on('users');
             $table->unsignedInteger('idColaborador');
             $table->foreign('idColaborador')->references('id')->on('colaborador');
