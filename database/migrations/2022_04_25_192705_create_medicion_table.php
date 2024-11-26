@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('medicion', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('latitud');
-            $table->string('longitud');
-            $table->string('direccion');
+            $table->string('latitud')->nullable();
+            $table->string('longitud')->nullable();
+            $table->string('direccion')->nullable();
             $table->string('referencia');
             $table->integer('consumo')->nullable();
             $table->integer('consumoReal')->nullable();
-            $table->double('total',8,2)->nullable();
+            $table->double('total', 8, 2)->nullable();
             $table->unsignedInteger('idMensualidad');
             $table->foreign('idMensualidad')->references('id')->on('mensualidad');
             $table->unsignedInteger('idAdministrador');
