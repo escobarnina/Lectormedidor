@@ -37,7 +37,7 @@ class MedicionController extends Controller
 
             // Crear una nueva medición
             $medicion = new Medicion();
-            $medicion->idMensualidad = 23; //Mensualidad::getMensualidadActualId();
+            $medicion->idMensualidad = Mensualidad::getMensualidadActualId();
             $medicion->consumo = $validatedData['flujo'];
             $medicion->total = $validatedData['volumen'];
             $medicion->referencia = "Constante: {$validatedData['umbralConstante']}, Fuga: {$validatedData['umbralFuga']}";
