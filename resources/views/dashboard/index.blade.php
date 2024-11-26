@@ -206,9 +206,9 @@
 @endsection
 @push('scripts')
     <script src="{{ asset('js/Chart.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('public/assets/global/plugins/highcharts/js/highcharts.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('public/assets/global/plugins/highcharts/js/highcharts-3d.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('public/assets/global/plugins/highcharts/js/highcharts-more.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/global/plugins/highcharts/js/highcharts.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/global/plugins/highcharts/js/highcharts-3d.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/global/plugins/highcharts/js/highcharts-more.js') }}" type="text/javascript"></script>
     <script>
         $('#navDashboard').addClass('active open');
         $('#navDashboard span.arrow').addClass('open');
