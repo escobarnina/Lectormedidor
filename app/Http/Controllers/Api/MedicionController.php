@@ -37,12 +37,12 @@ class MedicionController extends Controller
 
             // Crear una nueva medición
             $medicion = new Medicion();
-            $medicion->idMensualidad = Mensualidad::getMensualidadActualId();
+            $medicion->idMensualidad = 23; //Mensualidad::getMensualidadActualId();
             $medicion->consumo = $validatedData['flujo'];
             $medicion->total = $validatedData['volumen'];
             $medicion->referencia = "Constante: {$validatedData['umbralConstante']}, Fuga: {$validatedData['umbralFuga']}";
             $medicion->estado = 1; // Cambia según la lógica de tu aplicación
-            $medicion->idAdministrador = auth()->user()->id; // Asumiendo que el administrador es el usuario autenticado
+            $medicion->idAdministrador = auth()->user()->id ?? 1; // Asumiendo que el administrador es el usuario autenticado
             $medicion->save();
 
             // Retornar una respuesta exitosa
