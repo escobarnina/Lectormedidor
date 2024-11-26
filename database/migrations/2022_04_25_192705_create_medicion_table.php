@@ -25,15 +25,14 @@ return new class extends Migration
             $table->unsignedInteger('idMensualidad');
             $table->foreign('idMensualidad')->references('id')->on('mensualidad');
 
-            // Aquí hacemos que las claves foráneas sean nullable
-            $table->unsignedBigInteger('idAdministrador')->nullable();  // Permite valores nulos
-            $table->foreign('idAdministrador')->references('id')->on('users')->onDelete('set null'); // Se establece en null si el registro de 'users' es eliminado
+            $table->unsignedInteger('idAdministrador');  // Cambiado de unsignedBigInteger a unsignedInteger
+            $table->foreign('idAdministrador')->references('id')->on('users');
 
-            $table->unsignedBigInteger('idColaborador')->nullable(); // Permite valores nulos
-            $table->foreign('idColaborador')->references('id')->on('colaborador')->onDelete('set null'); // Se establece en null si el registro de 'colaborador' es eliminado
+            $table->unsignedInteger('idColaborador')->nullable();  // Cambiado de unsignedBigInteger a unsignedInteger
+            $table->foreign('idColaborador')->references('id')->on('colaborador')->onDelete('set null');
 
-            $table->unsignedBigInteger('idCliente')->nullable(); // Permite valores nulos
-            $table->foreign('idCliente')->references('id')->on('cliente')->onDelete('set null'); // Se establece en null si el registro de 'cliente' es eliminado
+            $table->unsignedInteger('idCliente')->nullable();  // Cambiado de unsignedBigInteger a unsignedInteger
+            $table->foreign('idCliente')->references('id')->on('cliente')->onDelete('set null');
 
             $table->integer('estado');
             $table->timestamps();
