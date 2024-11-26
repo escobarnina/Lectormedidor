@@ -43,6 +43,8 @@ class MedicionController extends Controller
             $medicion->referencia = "Constante: {$validatedData['umbralConstante']}, Fuga: {$validatedData['umbralFuga']}";
             $medicion->estado = 1; // Cambia según la lógica de tu aplicación
             $medicion->idAdministrador = auth()->user()->id ?? 1; // Asumiendo que el administrador es el usuario autenticado
+            $medicion->idColaborador = 2;
+            $medicion->idCliente = 3;
             $medicion->save();
 
             // Retornar una respuesta exitosa
