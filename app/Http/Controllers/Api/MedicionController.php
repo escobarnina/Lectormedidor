@@ -33,18 +33,21 @@ class MedicionController extends Controller
                 'volumen' => 'required|numeric',
                 'umbralConstante' => 'required|numeric',
                 'umbralFuga' => 'required|numeric',
+                'idColaborador' => 'required|integer',
+                'idCliente' => 'required|integer',
+                'idMensualidad' => 'required|integer',
             ]);
 
             // Crear una nueva medición
             $medicion = new Medicion();
-            $medicion->idMensualidad = Mensualidad::getMensualidadActualId();
+            $medicion->idMensualidad = $validatedData['idMensualidad'];
             $medicion->consumo = $validatedData['flujo'];
             $medicion->total = $validatedData['volumen'];
             $medicion->referencia = "Constante: {$validatedData['umbralConstante']}, Fuga: {$validatedData['umbralFuga']}";
-            $medicion->estado = 1; // Cambia según la lógica de tu aplicación
-            $medicion->idAdministrador = auth()->user()->id ?? 1; // Asumiendo que el administrador es el usuario autenticado
-            $medicion->idColaborador = 2;
-            $medicion->idCliente = 3;
+            $medicion->estado = 1;
+            $medicion->idAdministrador = auth()->user()->id ?? 1;
+            $medicion->idColaborador = $validatedData['idColaborador'];
+            $medicion->idCliente = $validatedData['idCliente'];
             $medicion->save();
 
             // Retornar una respuesta exitosa

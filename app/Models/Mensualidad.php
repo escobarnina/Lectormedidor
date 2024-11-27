@@ -92,29 +92,4 @@ class Mensualidad extends Model
         $mensualidad->update();
         return $mensualidad;
     }
-
-    public static function getMensualidadActualId()
-    {
-        // Configura la región en español
-        $fecha = new DateTime();
-        $formatter = new IntlDateFormatter(
-            'es_ES', // Configuración regional
-            IntlDateFormatter::FULL,
-            IntlDateFormatter::FULL,
-            null,
-            null,
-            'MMMM'
-        );
-
-        // Obtén el nombre del mes actual
-        $mesActual = ucfirst($formatter->format($fecha)); // Ejemplo: "Noviembre"
-
-        // Busca la mensualidad correspondiente al mes actual que no esté eliminada
-        $mensualidad = self::where('nombre', $mesActual)
-            ->where('eliminado', 0)
-            ->first();
-
-        // Retorna el ID si se encuentra, de lo contrario, retorna null
-        return $mensualidad ? $mensualidad->id : null;
-    }
 }
