@@ -95,7 +95,7 @@
 
     <footer>
         <div class="w3-row" style="margin-top: 1em;text-align: left;">
-            <p style="font-size: 10px;margin-left: 1em;vertical-align:middle;color: #888888;">Lector Medidor <strong></strong> by <strong>2022 © UAGRM</strong></p>
+            <p style="font-size: 10px;margin-left: 1em;vertical-align:middle;color: #888888;">Lector Medidor <strong></strong> by <strong>2024 © UAGRM</strong></p>
         </div>
     </footer>
 
